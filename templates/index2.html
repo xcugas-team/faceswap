@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html>
+<!--<head>-->
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+<!--</head>-->
+<body>
+<form method="POST" action="/result" enctype="multipart/form-data">
+  <label for="image">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose a photo:</label><label for="video">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose a video:</label><br><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="image" id="image">
+    <option value="./static/uploads/image/1rashmika.jpg">rashmika</option>
+    <option value="./static/uploads/image/2jhon.jpg">jhon</option>
+    <option value="./static/uploads/image/3Neslihan.jpg">Neslihan</option>
+    <option value="./static/uploads/image/4shahid.jpg">shahid</option>
+  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <select name="video" id="video" class="jumbotron collapse">
+  	<option value="./static/uploads/dataset/signing a contract 1.mp4">signing a contract 1</option>
+    <option value="./static/uploads/dataset/ordinary life _ start.mp4">Ordinary Life Start</option>
+    <option value="./static/uploads/dataset/receiving phone call 5.mp4">Receiving phone call 5</option>
+    <option value="./static/uploads/dataset/call.mp4">call</option>
+    <option value="./static/uploads/dataset/receiving phone call 4.mp4">Receiving phone call 4.mp4</option>
+  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="submit" value="Submit">
+</form>
+<!--<ul><li data-toggle="collapse" data-target="#video"><a href="#">Show</a></li></ul>-->
+
+<br>
+{% if filename %}
+  <center><video width="320" height="240" controls>
+    <source src="{{url_for('static', filename = filename)}}" type="video/mp4">
+
+    Your browser does not support the video tag.
+  </video></center>
+{% endif %}
+
+
+
+</body>
+</html>
